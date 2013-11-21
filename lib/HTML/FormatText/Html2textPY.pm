@@ -8,7 +8,7 @@ use base 'HTML::FormatExternal';
 use MRO::Compat;
 use mro 'c3';
 
-our $VERSION = '0.10';
+our $VERSION = '0.11';
 
 use constant DEFAULT_LEFTMARGIN => 0;
 use constant DEFAULT_RIGHTMARGIN => 79;
@@ -27,6 +27,10 @@ HTML::FormatText::Html2textPY - format HTML as plain text using html2text python
  $formatter = HTML::FormatText::Html2textPY->new;
  $tree = HTML::TreeBuilder->new_from_file ($filename);
  $text = $formatter->format ($tree);
+
+ #if you don't want wrapping do this
+ $formatter = HTML::FormatText::Html2textPY->new( rightmargin => -1 );
+ $formatter->format_string ($html_string);
 
 =head1 DESCRIPTION
 
@@ -51,7 +55,14 @@ sub program_version {
 
 sub _make_run {
   my ( $class, $input_filename, $options ) = @_;
-  my @command = ( 'html2text' );
+  my @command;
+
+  #turn wrapping off if right margin is set to < 0 in caller
+  if ( $class->{rightmargin} < 0 ) {
+    @command = ( 'html2text', '--body-width=0' );
+  } else {
+    @command = ( 'html2text' );
+  }
 
   return ( \@command, '<', $input_filename );
 }

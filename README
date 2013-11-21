@@ -11,6 +11,10 @@ SYNOPSIS
      $tree = HTML::TreeBuilder->new_from_file ($filename);
      $text = $formatter->format ($tree);
 
+     #if you don't want wrapping do this
+     $formatter = HTML::FormatText::Html2textPY->new( rightmargin => -1 );
+     $formatter->format_string ($html_string);
+
 DESCRIPTION
     "HTML::FormatText::Html2textPY" turns HTML into plain text using the
     "html2text" python script.
