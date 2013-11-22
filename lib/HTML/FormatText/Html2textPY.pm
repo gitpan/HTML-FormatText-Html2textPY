@@ -8,7 +8,7 @@ use base 'HTML::FormatExternal';
 use MRO::Compat;
 use mro 'c3';
 
-our $VERSION = '0.11';
+our $VERSION = '0.12';
 
 use constant DEFAULT_LEFTMARGIN => 0;
 use constant DEFAULT_RIGHTMARGIN => 79;
@@ -35,7 +35,8 @@ HTML::FormatText::Html2textPY - format HTML as plain text using html2text python
 =head1 DESCRIPTION
 
 C<HTML::FormatText::Html2textPY> turns HTML into plain text using the
-C<html2text> python script.
+C<html2text> python script. Please make sure you have it installed before 
+using this package.
 
 =cut
 

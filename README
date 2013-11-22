@@ -17,7 +17,8 @@ SYNOPSIS
 
 DESCRIPTION
     "HTML::FormatText::Html2textPY" turns HTML into plain text using the
-    "html2text" python script.
+    "html2text" python script. Please make sure you have it installed before
+    using this package.
 
 SEE ALSO
     HTML::FormatText
