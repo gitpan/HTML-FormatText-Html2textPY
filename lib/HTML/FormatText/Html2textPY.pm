@@ -8,7 +8,7 @@ use base 'HTML::FormatExternal';
 use MRO::Compat;
 use mro 'c3';
 
-our $VERSION = '0.12';
+our $VERSION = '0.13';
 
 use constant DEFAULT_LEFTMARGIN => 0;
 use constant DEFAULT_RIGHTMARGIN => 79;
@@ -70,7 +70,7 @@ sub _make_run {
 
 =head1 SEE ALSO
 
-L<HTML::FormatText>
+L<HTML::FormatExternal>
 
 =head1 AUTHOR
 

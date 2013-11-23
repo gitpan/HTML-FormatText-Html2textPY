@@ -21,7 +21,7 @@ DESCRIPTION
     using this package.
 
 SEE ALSO
-    HTML::FormatText
+    HTML::FormatExternal
 
 AUTHOR
     Alex Pavlovic, "alex.pavlovic@taskforce-1.com"
